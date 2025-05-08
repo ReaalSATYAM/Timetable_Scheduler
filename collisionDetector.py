@@ -32,3 +32,8 @@ elements, frequency = np.unique(colMatrix, return_counts= True)
 print(colMatrix)
 print(elements, frequency, extra)
 
+CORE_SEC_DATA={0:'A1',1:'A2',2:'B1',3:'B2',4:'C1',5:'C2',6:'D1',7:'D2',8:'E1',9:'E2',10:'F1',11:'F2',12:'G1',13:'G2',14:'H1',15:'H2',16:'I1'}
+AI_ML_SEC_DATA={0:'K1',1:'K2',2:'L1',3:'L2'}
+AI_DS_SEC_DATA={0:'J1',1:'J2'}
+CBS_SEC_DATA={0:'I2'}
+
