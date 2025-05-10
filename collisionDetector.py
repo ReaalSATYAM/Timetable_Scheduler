@@ -2,11 +2,12 @@ import random
 import numpy as np
 import pandas as pd
 
-WORKING_DAYS = 6
+WORKING_DAYS = 5
 rooms = {
     1: '101', 2: '102', 3: '103', 4: '104', 5: '105', 6: '106',
     7: '201', 8: '202', 9: '203', 10: '204', 11: '205', 12: '206', 13: '207',
-    14: '301'
+    14: '301', 15: '302', 16: '303',
+    17:'Lt201', 18:'Lt202', 19:'Lt301', 20:'Lt302' 
 }
 
 slots = {
@@ -19,13 +20,19 @@ days = {
 
 AI_sec = ['K1', 'K2', 'L1', 'L2']
 
+CORE_SEC_DATA={
+    0:'A1',1:'A2',2:'B1',3:'B2',4:'C1',5:'C2',6:'D1',7:'D2',8:'E1',9:'E2',10:'F1',11:'F2',12:'G1',13:'G2',14:'H1',15:'H2',16:'I1'
+    }
+AI_ML_SEC_DATA={
+    0:'K1',1:'K2',2:'L1',3:'L2'
+    }
+AI_DS_SEC_DATA={
+    0:'J1',1:'J2'
+    }
+CBS_SEC_DATA={
+    0:'I2'
+    }
 
-CORE_SEC_DATA={0:'A1',1:'A2',2:'B1',3:'B2',4:'C1',5:'C2',6:'D1',7:'D2',8:'E1',9:'E2',10:'F1',11:'F2',12:'G1',13:'G2',14:'H1',15:'H2',16:'I1'}
-AI_ML_SEC_DATA={0:'K1',1:'K2',2:'L1',3:'L2'}
-AI_DS_SEC_DATA={0:'J1',1:'J2'}
-CBS_SEC_DATA={0:'I2'}
-
-# This is only for a single day
 colMatrix = np.zeros((len(rooms), len(slots)), dtype=int)
 
 maxClass = 5
@@ -44,7 +51,7 @@ while i < (maxClass * totalSec + extra):
 # elements, frequency = np.unique(colMatrix, return_counts= True)
 # print(elements, frequency, extra)
 
-print(colMatrix)
+# print(colMatrix)
 
 AI_df = pd.read_csv('Dataset/BTech_CSE-AI-ML.csv')
 AI_ML = AI_df['Course_Code']
@@ -66,21 +73,12 @@ CYBER = Cyber_df['Course_Code']
 
 time_table = np.full((len(days), len(slots)), '', dtype=object)
 
-# sub = random.randint(0, len(AI_ML) - 1)
-
 for j in range(WORKING_DAYS):
-    i = 0   
-    extra = 0
-    while i < (maxClass + extra):
-        sub = AI_ML.sample().values[0]
+    subjects_today = AI_ML.sample(n=maxClass, replace=False).values 
+    slots_today = random.sample(range(len(slots)), k=maxClass)     
 
-        slot = random.randint(0, len(slots) - 1)
-        if time_table[j][slot] == '':
-            time_table[j][slot] = sub
-        else:
-            extra += 1
-        i += 1
-
+    for sub, slot in zip(subjects_today, slots_today):
+        time_table[j][slot] = sub
 
 print("\n")
 print(time_table)
