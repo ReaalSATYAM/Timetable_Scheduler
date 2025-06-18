@@ -1,0 +1,141 @@
+/* General styling */
+.root {
+    -fx-background-color: #0e0e23;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header Text */
+.label-title {
+    -fx-text-fill: white !important;
+    -fx-font-size: 40px !important;
+    -fx-font-weight: bold !important;
+}
+
+/* Summary count labels */
+.label-count {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.label-blue {
+    -fx-text-fill: #1e90ff;
+}
+
+.label-green {
+    -fx-text-fill: #00c896;
+}
+
+.label-pink {
+    -fx-text-fill: #ff4081;
+}
+
+.label-orange {
+    -fx-text-fill: #ff5722;
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #131339;
+    -fx-padding: 20;
+    -fx-spacing: 15;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 20 10 20;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #2c2c64;
+    -fx-cursor: hand;
+}
+
+/* Active button highlight */
+.sidebar-button.active {
+    -fx-background-color: #3232a8;
+}
+
+/* Search bar */
+.search-bar {
+    -fx-background-color: #1c1c3c;
+    -fx-text-fill: white;
+    -fx-border-color: #2f2f52;
+    -fx-border-width: 1;
+    -fx-padding: 5 10;
+}
+
+/* Table */
+.table-view {
+    -fx-background-color: #1c1c3c;
+    -fx-text-fill: white;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: #131339;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: #1c1c3c;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #2e2e72;
+}
+
+/* Status badge */
+.status-badge {
+    -fx-background-color: #00c896;
+    -fx-text-fill: white;
+    -fx-padding: 4 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* Scrollbar */
+.scroll-bar {
+    -fx-background-color: #0e0e23;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #3232a8;
+    -fx-background-radius: 4;
+}
+/* Login form labels */
+.login-label, .login-label * {
+    -fx-text-fill: white;
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+}
+
+.label{
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+/* Text fields and password fields */
+.text-field, .password-field {
+    -fx-background-color: #2a2a5c;  /* dark but distinct background */
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #b0b0b0;  /* lighter placeholder text */
+    -fx-border-color: #444477;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 8 12;
+}
+
+/* Login button */
+.Nbutton {
+    -fx-background-color: #3232a8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
