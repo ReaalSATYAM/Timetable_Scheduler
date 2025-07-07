@@ -62,7 +62,7 @@ for section in SECTIONS:
         while scheduled < count and attempts < 3000:
             day = random.randint(0, WORKING_DAYS - 1)
 
-            # Skip if this subject already scheduled today (optional, can be removed if tight)
+            # Skip if this subject already scheduled today 
             if subject in daily_subjects[day]:
                 attempts += 1
                 continue
@@ -119,7 +119,7 @@ for section in SECTIONS:
                 if room_assigned is None:
                     continue  # couldn't find room
 
-                # Success! Assign to timetable
+                # Assign room to timetable
                 for offset in range(units_required):
                     time_table[day][slot + offset] = f"{subject} ({room_assigned}) - {faculty}"
                     used_rooms[day][slot + offset].add(room_assigned)
@@ -130,7 +130,7 @@ for section in SECTIONS:
                 units_per_day[day] += units_required
                 scheduled += 1
                 slot_found = True
-                break  # out of slot loop
+                break 
 
         if not slot_found:
             attempts += 1
